@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .custom-navbar {
+        background-color: translucent;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0);
+      }
+
+      .custom-background {
+        background-color: #000000;
+      }
+
+      .custom-card-background{
+        background-color: #fcfcfc;
+      }
+
+      .custom-text-center {
+        text-align: justify; /* Center align text */
+      }
+
+      .custom-max-w-md {
+        max-width: 32rem; /* Adjust max width as needed */
+        margin: 0 auto; /* Center align block element */
+      }
+
+      .custom-image {
+        position: relative; /* Ensure the pseudo-element is positioned relative to this element */
+        background-image: url('R.jpeg'); /* Use a relative path */
+        background-size: cover; /* Cover the entire section */
+        background-position: center; /* Center the image */
+        background-repeat: no-repeat; /* Do not repeat the image */
+      }
+
+      .custom-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+        z-index: 1; /* Ensure the overlay is above the background image */
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2; /* Ensure the content is above the overlay */
+      }
+
+      .drawer-side {
+        z-index: 2; /* Ensure the sidebar content is above the overlay */
+      }
+
+      .custom-text-color{
+        color: #000000;
+      }
+  
+      .custom-card-btn {
+        background-color: #000000;
+        color: #ffffff; /* This sets the text color to white */
+        padding: 10px 20px; /* Optional: Add some padding */
+        border: none; /* Optional: Remove border */
+        cursor: pointer; /* Optional: Change cursor to pointer */
+    }
+    </style>
+
+    <title>Button Animation</title>
+    <style>
+        .custom-btn {
+            background-color: #000000c2;
+            color: white;
+            border: none;
+            font-size: 2em; /* Increase the size of the arrow */
+            animation: jump 1s infinite; /* Apply the jump animation */
+            z-index: 2;
+        }
+
+        @keyframes jump {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px); /* Adjust the jump height */
+            }
+        }
+    </style>
+
+    <title>Animated Gradient Text</title>
+    <style>
+        .padding-reduced {
+        padding: 0.1rem; /* Adjust the padding as needed */
+        }
+        .line-height-custom {
+        line-height: 1.8; /* Adjust the line height as needed */
+        }
+        .gradient-text {
+            font-size: 3rem; /* Adjust the font size as needed */
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6ec4, #7873f5, #4ade80);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-animation 3s ease infinite;
+        }
+
+        @keyframes gradient-animation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="drawer">
+        <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col">
+          <!-- Navbar -->
+          <div class="navbar fixed z-10 custom-navbar w-full">
+            <div class="flex-none">
+              <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  class="inline-block h-6 w-6 stroke-current">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </label>
+            </div>
+            <div class="mx-2 flex-1 px-2">M.Tech Integrated</div>
+          </div>
+          <!-- Page content here -->
+
+          <!--Hero Section -->
+          <div class="hero custom-image min-h-screen relative">
+            <div class="hero-content text-center">
+              <div class="custom-max-w-md">
+                <h1 class="gradient-text padding-reduced">Financial Machine Learning</h1>
+                <p class="custom-text-center text-white py-6">
+                  An innovative intersection of finance and artificial intelligence, 
+                  where sophisticated algorithms analyze vast amounts of financial data
+                  to uncover patterns and insights that drive smarter investment strategies. 
+                  By leveraging techniques from machine learning, such as predictive analytics
+                  and algorithmic trading, financial institutions can enhance decision-making 
+                  processes, optimize portfolios, and identify emerging market trends. This dynamic 
+                  field empowers analysts and traders to harness the power of data, transforming 
+                  traditional finance into a data-driven discipline that adapts swiftly to the 
+                  ever-evolving landscape of global markets.
+                </p>
+              </div>
+            </div>
+            <a href="#video_tab" class="custom-btn custom-btn-primary absolute bottom-12">↓</a>
+          </div>
+
+          <!-- Videos -->
+          <div id="video_tab" class="flex flex-wrap gap-6 justify-center custom-background min-h-screen p-16">
+            <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+              <figure>
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  alt="Shoes" />
+              </figure>
+              <div class="card-body custom-text-color">
+                <h2 class="card-title">Shoes!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                  <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                </div>
+              </div>
+            </div>
+            <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+              <figure>
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  alt="Shoes" />
+              </figure>
+              <div class="card-body custom-text-color">
+                <h2 class="card-title">Shoes!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                  <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                </div>
+              </div>
+            </div>
+            <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+              <figure>
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  alt="Shoes" />
+              </figure>
+              <div class="card-body custom-text-color">
+                <h2 class="card-title">Shoes!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                  <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                </div>
+              </div>
+            </div>
+            <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+              <figure>
+                <img
+                  src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                  alt="Shoes" />
+              </figure>
+              <div class="card-body custom-text-color">
+                <h2 class="card-title">Shoes!</h2>
+                <p>If a dog chews shoes whose shoes does he choose?</p>
+                <div class="card-actions justify-end">
+                  <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="drawer-side">
+          <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+          <ul class="menu bg-base-200 min-h-full w-80 pt-20">
+            <!-- Sidebar content here -->
+            <li><a>About</a></li>
+            <li><a>Course</a></li>
+          </ul>
+        </div>
+      </div>
+</body>
+</html>
