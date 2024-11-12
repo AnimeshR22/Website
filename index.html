@@ -8,6 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.13/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      .unit-section {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        
       .custom-navbar {
         background-color: translucent;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0);
@@ -22,20 +27,20 @@
       }
 
       .custom-text-center {
-        text-align: justify; /* Center align text */
+        text-align: justify;
       }
 
       .custom-max-w-md {
-        max-width: 32rem; /* Adjust max width as needed */
-        margin: 0 auto; /* Center align block element */
+        max-width: 32rem;
+        margin: 0 auto;
       }
 
       .custom-image {
-        position: relative; /* Ensure the pseudo-element is positioned relative to this element */
-        background-image: url('R.jpeg'); /* Use a relative path */
-        background-size: cover; /* Cover the entire section */
-        background-position: center; /* Center the image */
-        background-repeat: no-repeat; /* Do not repeat the image */
+        position: relative;
+        background-image: url('R.jpeg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
 
       .custom-image::before {
@@ -45,17 +50,17 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-        z-index: 1; /* Ensure the overlay is above the background image */
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
       }
 
       .hero-content {
         position: relative;
-        z-index: 2; /* Ensure the content is above the overlay */
+        z-index: 2;
       }
 
       .drawer-side {
-        z-index: 2; /* Ensure the sidebar content is above the overlay */
+        z-index: 2;
       }
 
       .custom-text-color{
@@ -64,69 +69,52 @@
   
       .custom-card-btn {
         background-color: #000000;
-        color: #ffffff; /* This sets the text color to white */
-        padding: 10px 20px; /* Optional: Add some padding */
-        border: none; /* Optional: Remove border */
-        cursor: pointer; /* Optional: Change cursor to pointer */
+        color: #ffffff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
     }
-    .unit-section {
-            width: 100%;
-            margin-bottom: 50px;
+
+    .custom-btn {
+        background-color: #000000c2;
+        color: white;
+        border: none;
+        font-size: 2em;
+        animation: jump 1s infinite;
+        z-index: 2;
+    }
+
+    @keyframes jump {
+        0%, 100% {
+            transform: translateY(0);
         }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    .padding-reduced {
+        padding: 0.1rem;
+    }
+    .line-height-custom {
+        line-height: 1.8;
+    }
+    .gradient-text {
+        font-size: 3rem;
+        font-weight: bold;
+        background: linear-gradient(45deg, #ff6ec4, #7873f5, #4ade80);
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient-animation 3s ease infinite;
+    }
+
+    @keyframes gradient-animation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
     </style>
-
-    <title>Button Animation</title>
-    <style>
-        .custom-btn {
-            background-color: #000000c2;
-            color: white;
-            border: none;
-            font-size: 2em; /* Increase the size of the arrow */
-            animation: jump 1s infinite; /* Apply the jump animation */
-            z-index: 2;
-        }
-
-        @keyframes jump {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px); /* Adjust the jump height */
-            }
-        }
-    </style>
-
-    <title>Animated Gradient Text</title>
-    <style>
-        .padding-reduced {
-        padding: 0.1rem; /* Adjust the padding as needed */
-        }
-        .line-height-custom {
-        line-height: 1.8; /* Adjust the line height as needed */
-        }
-        .gradient-text {
-            font-size: 3rem; /* Adjust the font size as needed */
-            font-weight: bold;
-            background: linear-gradient(45deg, #ff6ec4, #7873f5, #4ade80);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-animation 3s ease infinite;
-        }
-
-        @keyframes gradient-animation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-    </style>
-    
 </head>
 <body>
     <div class="drawer">
@@ -136,24 +124,15 @@
           <div class="navbar fixed z-10 custom-navbar w-full">
             <div class="flex-none">
               <label for="my-drawer-3" aria-label="open sidebar" class="btn btn-square btn-ghost">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  class="inline-block h-6 w-6 stroke-current">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M4 6h16M4 12h16M4 18h16"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block h-6 w-6 stroke-current">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
               </label>
             </div>
             <div class="mx-2 flex-1 px-2">21CSC426T</div>
           </div>
-          <!-- Page content here -->
 
-          <!--Hero Section -->
+          <!-- Hero Section -->
           <div class="hero custom-image min-h-screen relative">
             <div class="hero-content text-center">
               <div class="custom-max-w-md">
@@ -175,348 +154,350 @@
           </div>
 
           <!-- Videos -->
-          <!--unit 1-->
+           <!-- unit1 -->
           <div id="video_tab" class="flex flex-wrap gap-6 justify-center custom-background min-h-screen p-16">
-<div class="unit-section">
-  <h2 class="text-3xl text-color mb-6 text-center">Unit 1</h2>
-  <div class="flex gap-6 overflow-x-auto">
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/nEIq7cBWyhU?si=FBgdhek7YTFfPT8x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Python Packages for ML & NLP</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=nEIq7cBWyhU&t=8s" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/GBLiaX6FcpI?si=NUdKkwDFlxVxkoOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Installation of Python Packages</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=GBLiaX6FcpI" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/CXvpQAdb5Yg?si=d6HyG4-QTSUaZZWh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">ANN Models: GPU & Cloud Services</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=CXvpQAdb5Yg&t=11s" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/o1-1EovyehA?si=AFM-fan7qzWVsQe2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Case Study on ANN Model</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=o1-1EovyehA&t=5s" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+            <div class="unit-section">
+              <h2 class="text-3xl text-white mb-6 text-center">Unit 1</h2>
+              <div class="flex gap-6 overflow-x-auto">
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/nEIq7cBWyhU?si=FBgdhek7YTFfPT8x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">Python Packages for ML & NLP</h2>
+                    <div class="card-actions justify-end">
+                      <a href="https://www.youtube.com/watch?v=nEIq7cBWyhU&t=8s" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                    <figure>
+                      <iframe width="540" height="280" src="https://www.youtube.com/embed/GBLiaX6FcpI?si=NUdKkwDFlxVxkoOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </figure>
+                    <div class="card-body custom-text-color">
+                      <h2 class="card-title">Installation of Python Packages</h2>
+                      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                      <div class="card-actions justify-end">
+                        <a href="https://www.youtube.com/watch?v=GBLiaX6FcpI" target="_blank">
+                          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                    <figure>
+                      <iframe width="540" height="280" src="https://www.youtube.com/embed/CXvpQAdb5Yg?si=d6HyG4-QTSUaZZWh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </figure>
+                    <div class="card-body custom-text-color">
+                      <h2 class="card-title">ANN Models: GPU & Cloud Services</h2>
+                      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                      <div class="card-actions justify-end">
+                        <a href="https://www.youtube.com/watch?v=CXvpQAdb5Yg&t=11s" target="_blank">
+                          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                    <figure>
+                      <iframe width="540" height="280" src="https://www.youtube.com/embed/o1-1EovyehA?si=AFM-fan7qzWVsQe2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </figure>
+                    <div class="card-body custom-text-color">
+                      <h2 class="card-title">Case Study on ANN Model</h2>
+                      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                      <div class="card-actions justify-end">
+                        <a href="https://www.youtube.com/watch?v=o1-1EovyehA&t=5s" target="_blank">
+                          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
+            <!-- #unit 2 -->
+            <div class="unit-section">
+                <h2 class="text-3xl text-color mb-6 text-center">Unit 2</h2>
+                <div class="flex gap-6 overflow-x-auto">
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/Bc4m29GwkFI?si=5N0qdV2IC9IyiCiU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">Supervised Learning</h2>
+                    <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                    <div class="card-actions justify-end">
+                      <a href="https://www.youtube.com/watch?v=Bc4m29GwkFI&t=3s" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/n1zAI0u3tdU?si=Z5PRgsZB69TOOHz9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">SL Model Performance</h2>
+                    <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                    <div class="card-actions justify-end">
+                      <a href="https://www.youtube.com/watch?v=n1zAI0u3tdU&t=4s" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/IwYRy0AHcX8?si=s3V9YN4IrkA7i7mg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">Regression: Time Series Model (Part1)</h2>
+                    <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                    <div class="card-actions justify-end">
+                      <a href="https://www.youtube.com/watch?v=IwYRy0AHcX8&t=1s" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/GB9eVX3Te8k?si=xvkcCtFLR1EQkZ5g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">Regression: Time Series Model (Part 2)</h2>
+                    <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                    <div class="card-actions justify-end">
+                      <a href="https://www.youtube.com/watch?v=GB9eVX3Te8k" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/WYsdAStoKK0?si=n1d_mub2xo9a7-h5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">Stock Price Prediction</h2>
+                    <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                    <div class="card-actions justify-end">
+                      <a href="https://www.youtube.com/watch?v=WYsdAStoKK0&t=2s" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/rDYqLzMWyaw?si=_kxexqvh6Br6oyUG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">Derivative Pricing</h2>
+                    <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                    <div class="card-actions justify-end">
+                      <a href="https://www.youtube.com/watch?v=rDYqLzMWyaw&t=8s" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/HY-0slOASrA?si=hyk5VqQ5LEroZNKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">Yield Curve Prediction</h2>
+                    <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                    <div class="card-actions justify-end">
+                      <a href="https://www.youtube.com/watch?v=HY-0slOASrA&t=46s" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+              
+              <!-- #unit 3 -->
+              <div class="unit-section">
+                <h2 class="text-3xl text-color mb-6 text-center">Unit 3</h2>
+                <div class="flex gap-6 overflow-x-auto">
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/7gPFDkCTk5I?si=S__M48L7gytMptQK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">Classification Algorithms</h2>
+                    <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                    <div class="card-actions justify-end">
+                      <a href="https://www.youtube.com/watch?v=7gPFDkCTk5I&t=3s" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/mmMiv7TaNJg?si=QenqXgFXJ6i91nk5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">Credit Card Fraud Detection</h2>
+                    <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                    <div class="card-actions justify-end">
+                      <a href="https://www.youtube.com/watch?v=mmMiv7TaNJg&t=5s" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/FShOFqxksYE?si=jOXJHp-vrDagiii4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">Loan Default Probability</h2>
+                    <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                    <div class="card-actions justify-end">
+                      <a href="https://www.youtube.com/watch?v=FShOFqxksYE" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+                  <figure>
+                    <iframe width="540" height="280" src="https://www.youtube.com/embed/xPWoNtok9RA?si=Rmm56SPS898ruMX2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  </figure>
+                  <div class="card-body custom-text-color">
+                    <h2 class="card-title">Bitcoin Trading Strategies</h2>
+                    <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                    <div class="card-actions justify-end">
+                      <a href="https://youtu.be/xPWoNtok9RA?si=D5dEOsSASC5MsHJH" target="_blank">
+                        <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+              
+          <!-- #unit 4 -->
+          <div class="unit-section">
+            <h2 class="text-3xl text-color mb-6 text-center">Unit 4</h2>
+            <div class="flex gap-6 overflow-x-auto">
+            <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+              <figure>
+                <iframe width="540" height="280" src="https://www.youtube.com/embed/iChkeLNSOC8?si=nxceBfBiTnlKPlYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </figure>
+              <div class="card-body custom-text-color">
+                <h2 class="card-title">Clustering Techniques</h2>
+                <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                <div class="card-actions justify-end">
+                  <a href="https://www.youtube.com/watch?v=iChkeLNSOC8&t=11s" target="_blank">
+                    <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+              <figure>
+                <iframe width="540" height="280" src="https://www.youtube.com/embed/2kTiamzMfiw?si=R8zA2hzytxS_sN23" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </figure>
+              <div class="card-body custom-text-color">
+                <h2 class="card-title">Pairs Trading</h2>
+                <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                <div class="card-actions justify-end">
+                  <a href="https://www.youtube.com/watch?v=2kTiamzMfiw&t=6s" target="_blank">
+                    <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+              <figure>
+                <iframe width="540" height="280" src="https://www.youtube.com/embed/OjlCeIRexl0?si=LMb-zax9W54p9dVx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </figure>
+              <div class="card-body custom-text-color">
+                <h2 class="card-title">Portfolio Management</h2>
+                <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                <div class="card-actions justify-end">
+                  <a href="https://www.youtube.com/watch?v=OjlCeIRexl0&t=7s" target="_blank">
+                    <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-<!-- #unit 2 -->
-<div class="unit-section">
-  <h2 class="text-3xl text-color mb-6 text-center">Unit 2</h2>
-  <div class="flex gap-6 overflow-x-auto">
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/Bc4m29GwkFI?si=5N0qdV2IC9IyiCiU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Supervised Learning</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=Bc4m29GwkFI&t=3s" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/n1zAI0u3tdU?si=Z5PRgsZB69TOOHz9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">SL Model Performance</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=n1zAI0u3tdU&t=4s" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/IwYRy0AHcX8?si=s3V9YN4IrkA7i7mg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Regression: Time Series Model (Part1)</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=IwYRy0AHcX8&t=1s" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/GB9eVX3Te8k?si=xvkcCtFLR1EQkZ5g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Regression: Time Series Model (Part 2)</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=GB9eVX3Te8k" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/WYsdAStoKK0?si=n1d_mub2xo9a7-h5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Stock Price Prediction</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=WYsdAStoKK0&t=2s" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/rDYqLzMWyaw?si=_kxexqvh6Br6oyUG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Derivative Pricing</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=rDYqLzMWyaw&t=8s" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/HY-0slOASrA?si=hyk5VqQ5LEroZNKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Yield Curve Prediction</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=HY-0slOASrA&t=46s" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-
-
-        <!-- #unit 3 -->
+        <!-- #unit 5 -->
         <div class="unit-section">
-          <h2 class="text-3xl text-color mb-6 text-center">Unit 3</h2>
-          <div class="flex gap-6 overflow-x-auto">
-          <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-            <figure>
-              <iframe width="540" height="280" src="https://www.youtube.com/embed/7gPFDkCTk5I?si=S__M48L7gytMptQK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </figure>
-            <div class="card-body custom-text-color">
-              <h2 class="card-title">Classification Algorithms</h2>
-              <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-              <div class="card-actions justify-end">
-                <a href="https://www.youtube.com/watch?v=7gPFDkCTk5I&t=3s" target="_blank">
-                  <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-                </a>
+            <h2 class="text-3xl text-color mb-6 text-center">Unit 5</h2>
+            <div class="flex gap-6 overflow-x-auto">
+            <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+              <figure>
+                <iframe width="540" height="280" src="https://www.youtube.com/embed/2bbiUn0NZ9g?si=UKmQ7fhoNeQ4shg7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </figure>
+              <div class="card-body custom-text-color">
+                <h2 class="card-title">Natural Language Processing</h2>
+                <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                <div class="card-actions justify-end">
+                  <a href="https://www.youtube.com/watch?v=2bbiUn0NZ9g&t=4s" target="_blank">
+                    <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-            <figure>
-              <iframe width="540" height="280" src="https://www.youtube.com/embed/mmMiv7TaNJg?si=QenqXgFXJ6i91nk5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </figure>
-            <div class="card-body custom-text-color">
-              <h2 class="card-title">Credit Card Fraud Detection</h2>
-              <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-              <div class="card-actions justify-end">
-                <a href="https://www.youtube.com/watch?v=mmMiv7TaNJg&t=5s" target="_blank">
-                  <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-                </a>
+            <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+              <figure>
+                <iframe width="540" height="280" src="https://www.youtube.com/embed/5hTJVmtbCrw?si=ibJoMAsPDQTpjNuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </figure>
+              <div class="card-body custom-text-color">
+                <h2 class="card-title">Sentiment Analysis</h2>
+                <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                <div class="card-actions justify-end">
+                  <a href="https://www.youtube.com/watch?v=5hTJVmtbCrw" target="_blank">
+                    <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-            <figure>
-              <iframe width="540" height="280" src="https://www.youtube.com/embed/FShOFqxksYE?si=jOXJHp-vrDagiii4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </figure>
-            <div class="card-body custom-text-color">
-              <h2 class="card-title">Loan Default Probability</h2>
-              <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-              <div class="card-actions justify-end">
-                <a href="https://www.youtube.com/watch?v=FShOFqxksYE" target="_blank">
-                  <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-            <figure>
-              <iframe width="540" height="280" src="https://www.youtube.com/embed/xPWoNtok9RA?si=Rmm56SPS898ruMX2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </figure>
-            <div class="card-body custom-text-color">
-              <h2 class="card-title">Bitcoin Trading Strategies</h2>
-              <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-              <div class="card-actions justify-end">
-                <a href="https://youtu.be/xPWoNtok9RA?si=D5dEOsSASC5MsHJH" target="_blank">
-                  <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-                </a>
+            <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
+              <figure>
+                <iframe width="540" height="280" src="https://www.youtube.com/embed/ekW0HHAfyyQ?si=-dvnATT7lxy4bELt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </figure>
+              <div class="card-body custom-text-color">
+                <h2 class="card-title">Building a Simple Chatbot</h2>
+                <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
+                <div class="card-actions justify-end">
+                  <a href="https://www.youtube.com/watch?v=ekW0HHAfyyQ&t=4s" target="_blank">
+                    <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-    </div>
+      
 
-    <!-- #unit 4 -->
-    <div class="unit-section">
-      <h2 class="text-3xl text-color mb-6 text-center">Unit 4</h2>
-      <div class="flex gap-6 overflow-x-auto">
-      <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-        <figure>
-          <iframe width="540" height="280" src="https://www.youtube.com/embed/iChkeLNSOC8?si=nxceBfBiTnlKPlYY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </figure>
-        <div class="card-body custom-text-color">
-          <h2 class="card-title">Clustering Techniques</h2>
-          <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-          <div class="card-actions justify-end">
-            <a href="https://www.youtube.com/watch?v=iChkeLNSOC8&t=11s" target="_blank">
-              <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-        <figure>
-          <iframe width="540" height="280" src="https://www.youtube.com/embed/2kTiamzMfiw?si=R8zA2hzytxS_sN23" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </figure>
-        <div class="card-body custom-text-color">
-          <h2 class="card-title">Pairs Trading</h2>
-          <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-          <div class="card-actions justify-end">
-            <a href="https://www.youtube.com/watch?v=2kTiamzMfiw&t=6s" target="_blank">
-              <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-        <figure>
-          <iframe width="540" height="280" src="https://www.youtube.com/embed/OjlCeIRexl0?si=LMb-zax9W54p9dVx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </figure>
-        <div class="card-body custom-text-color">
-          <h2 class="card-title">Portfolio Management</h2>
-          <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-          <div class="card-actions justify-end">
-            <a href="https://www.youtube.com/watch?v=OjlCeIRexl0&t=7s" target="_blank">
-              <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-<!-- #unit 5 -->
-<div class="unit-section">
-  <h2 class="text-3xl text-color mb-6 text-center">Unit 5</h2>
-  <div class="flex gap-6 overflow-x-auto">
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/2bbiUn0NZ9g?si=UKmQ7fhoNeQ4shg7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Natural Language Processing</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=2bbiUn0NZ9g&t=4s" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
+          </div>
+        </div>
+
+        <div class="drawer-side">
+          <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+          <ul class="menu bg-base-200 min-h-full w-80 pt-20">
+            <!-- Sidebar content here -->
+            <li><a href="about.html">About</a></li>
+            <li><a href="https://drive.google.com/file/d/1Z9ZIYFOdI0ZH19Ti8FcNdchpUOt1QKre/view?usp=sharing">Course Plan</a></li>
+            <li><a href="https://drive.google.com/file/d/18pcCYq2ycVmpCYDVkMcndrecoyjsQrbP/view?usp=sharing">Course Syllabus</a></li>
+            <li><a href="https://drive.google.com/file/d/1kbuRajZ4_HcwrcnBh9caz4hrB88xCW-K/view?usp=sharing">E-Book</a></li>
+          </ul>
+        </div>
     </div>
-  </div>
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/5hTJVmtbCrw?si=ibJoMAsPDQTpjNuU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Sentiment Analysis</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=5hTJVmtbCrw" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-  <div class="card card-compact custom-card-background w-96 shadow-xl h-96">
-    <figure>
-      <iframe width="540" height="280" src="https://www.youtube.com/embed/ekW0HHAfyyQ?si=-dvnATT7lxy4bELt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </figure>
-    <div class="card-body custom-text-color">
-      <h2 class="card-title">Building a Simple Chatbot</h2>
-      <!-- <p>If a dog chews shoes whose shoes does he choose?</p> -->
-      <div class="card-actions justify-end">
-        <a href="https://www.youtube.com/watch?v=ekW0HHAfyyQ&t=4s" target="_blank">
-          <button class="custom-card-btn custom-card-btn-primary">Watch Now!!</button>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
- 
-<div class="drawer-side">
-  <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
-  <ul class="menu bg-base-200 min-h-full w-80 pt-20">
-    <!-- Sidebar content here -->
-    <li><a href="about.html">About</a></li>
-    <li><a href="https://drive.google.com/file/d/1Z9ZIYFOdI0ZH19Ti8FcNdchpUOt1QKre/view?usp=sharing">Course Plan</a></li>
-    <li><a href="https://drive.google.com/file/d/18pcCYq2ycVmpCYDVkMcndrecoyjsQrbP/view?usp=sharing">Course Syllabus</a></li>
-    <li><a href="https://drive.google.com/file/d/1kbuRajZ4_HcwrcnBh9caz4hrB88xCW-K/view?usp=sharing">E-Book</a></li>
-  </ul>
-</div>
-</div>
 </body>
 </html>
